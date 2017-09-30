@@ -3,10 +3,11 @@
  */
 const Koa = require('koa')
 const app = new Koa()
+const PORT = 3001
 
 app.use(ctx => {
-    ctx.body = 'Hello, World!'
+    ctx.response.body = 'Hello, World!'
 })
 
-app.listen(3000)
-console.log('Koa started on port 3000')
+app.listen(PORT)
+console.log(`Koa started on port ${PORT}`)
