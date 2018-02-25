@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node ./src",
+    "build": "webpack --config ./webpack/webpack.build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "HJX",
