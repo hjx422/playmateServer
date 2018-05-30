@@ -10,17 +10,14 @@ module.exports = [{
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: '../webapp'
+        path: path.resolve(__dirname, '../webapp')
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                use: 'babel-loader',
                 include: path.resolve(__dirname, 'src'),
-                query: {
-                    presets: ['es2015']
-                }
             }
         ]
     }
