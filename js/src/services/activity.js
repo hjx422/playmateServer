@@ -6,8 +6,8 @@ import ActivityModel from '../models/activity.js'
 const activityService = {}
 
 activityService.create = async (activity) => {
-  const Activity = new ActivityModel(activity)
-  return await Activity.save()
+  const activityModel = new ActivityModel(activity)
+  return await activityModel.save()
 }
 
 export default activityService
