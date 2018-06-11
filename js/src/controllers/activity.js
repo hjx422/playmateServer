@@ -8,7 +8,7 @@ const activityController = {}
 activityController.create = (ctx, next) => {
   const activity = ctx.request.body || {}
   try {
-    activityService.create(activity)
+    activityService.create(JSON.parse(activity))
     ctx.body = {
       sucess: true
     }
@@ -16,7 +16,6 @@ activityController.create = (ctx, next) => {
     ctx.body = {
       sucess: false
     }
-    return next
   }
 }
 
