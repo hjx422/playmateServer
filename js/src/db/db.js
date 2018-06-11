@@ -27,6 +27,6 @@ mongoose.connection.on('disconnected', () => {
   console.log(`Mongoose connection disconnected`)
 })
 
-mongoose.connect(Config.db.url, { useMongoClient: true })
+mongoose.connect(Config.db.url)
 
 export default mongoose
