@@ -2,11 +2,11 @@
  * Created by hjx on 2/14/2018.
  */
 import Koa from 'koa'
-import Router from 'koa-router'
+import router from './routers'
 import { helloworld } from './controllers/helloworld.js'
+import './db/db.js'
 
 const app = new Koa()
-const router = new Router()
 
 const PORT = 3000
 
