@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2018/6/10.
  */
-import activityService from '../services/activity.js'
+import activityService from './service.js'
 
 const activityController = {}
 
