@@ -5,7 +5,6 @@ import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
 
 import router from './routers'
-import { helloworld } from './controllers/helloworld.js'
 import './db/db.js'
 
 const app = new Koa()
