@@ -2,10 +2,11 @@
  * Created by Administrator on 2018/6/7.
  */
 import mongoose from 'mongoose'
+import 'mongoose-schema-extend'
 
-const Schema = mongoose.Schema
+import BaseSchema from '../../models/baseSchema.js'
 
-const ActivitySchema = new Schema({
+const ActivitySchema = BaseSchema.extend({
   title: String,
   type: String,
   time: Date,
@@ -14,6 +15,6 @@ const ActivitySchema = new Schema({
   description: String
 })
 
-const Activity = mongoose.model('Activity', ActivitySchema)
+const ActivityModel = mongoose.model('Activity', ActivitySchema)
 
-export default Activity
+export default ActivityModel
