@@ -5,10 +5,10 @@ import activityService from './service.js'
 
 const activityController = {}
 
-activityController.create = (ctx, next) => {
+activityController.create = async (ctx, next) => {
   const activity = ctx.request.body || {}
   try {
-    activityService.create(JSON.parse(activity))
+    await activityService.create(JSON.parse(activity))
     ctx.body = {
       sucess: true
     }

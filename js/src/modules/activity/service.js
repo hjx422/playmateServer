@@ -6,8 +6,15 @@ import ActivityModel from './models.js'
 const activityService = {}
 
 activityService.create = async (activity) => {
-  const activityModel = new ActivityModel(activity)
-  return await activityModel.save()
+  return new Promise((resolve, reject) => {
+    ActivityModel.create(activity, (err, doc) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(doc)
+      }
+    })   
+  })
 }
 
 activityService.getList = async (maxId, limit = 10) => {
