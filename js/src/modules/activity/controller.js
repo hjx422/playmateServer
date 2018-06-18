@@ -19,8 +19,14 @@ activityController.create = (ctx, next) => {
   }
 }
 
-activityController.getList = (ctx, next) => {
-  ctx.body = 'what the fuck'
+activityController.getList = async (ctx, next) => {
+  try {
+    const params = ctx.request.query
+    const list = await activityService.getList(params.maxId, parseInt(params.limit))
+    ctx.body = list
+  } catch (e) {
+    ctx.body = e
+  }
 }
 
 
