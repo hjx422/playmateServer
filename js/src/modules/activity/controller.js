@@ -7,27 +7,16 @@ const activityController = {}
 
 activityController.create = async (ctx, next) => {
   const activity = ctx.request.body || {}
-  try {
-    await activityService.create(JSON.parse(activity))
-    ctx.body = {
-      sucess: true
-    }
-  } catch (e) {
-    ctx.body = {
-      sucess: false
-    }
+  await activityService.create(JSON.parse(activity))
+  ctx.body = {
+    sucess: true
   }
 }
 
 activityController.getList = async (ctx, next) => {
-  try {
-    const params = ctx.request.query
-    const list = await activityService.getList(params.maxId, parseInt(params.limit))
-    ctx.body = list
-  } catch (e) {
-    ctx.body = e
-  }
+  const params = ctx.request.query
+  const list = await activityService.getList(params.maxId, parseInt(params.limit))
+  ctx.body = list
 }
-
 
 export default activityController

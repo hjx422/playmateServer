@@ -17,5 +17,9 @@ app.use(bodyParser({ enableTypes: ['json', 'form', 'text'] }))
 // 配置路由中间件
 app.use(router.routes()).use(router.allowedMethods())
 
+app.on('error', (err, ctx) => {
+  console.error('error', err)
+})
+
 app.listen(PORT)
 console.log(`Koa started on port ${PORT}`)
